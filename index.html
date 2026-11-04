@@ -1,0 +1,1117 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday Thanh Thảo ❤️</title>
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, "DejaVu Sans", sans-serif;
+    background: linear-gradient(135deg, #ffe0eb, #f8c5dc, #e9d5ff);
+    min-height: 100vh;
+    overflow-x: hidden;
+    color: #a83267;
+}
+
+.screen {
+    min-height: 100vh;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    padding: 20px;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 1s ease;
+}
+
+.screen.active {
+    opacity: 1;
+    visibility: visible;
+    display: flex;
+}
+
+h1 {
+    font-size: clamp(32px, 7vw, 55px);
+    color: #e84383;
+    text-shadow: 2px 3px 8px white;
+}
+
+p {
+    font-size: 18px;
+    margin: 15px;
+    line-height: 1.7;
+}
+
+button {
+    background: #ec6097;
+    color: white;
+    border: none;
+    border-radius: 30px;
+    padding: 14px 30px;
+    font-size: 17px;
+    cursor: pointer;
+    margin-top: 15px;
+    box-shadow: 0 5px 15px #d98aaa;
+    transition: 0.3s;
+}
+
+button:hover {
+    background: #c93472;
+    transform: scale(1.08);
+}
+
+/* MÀN HÌNH 1: HỘP QUÀ */
+
+.gift {
+    font-size: 120px;
+    cursor: pointer;
+    animation: bounce 2.5s infinite;
+}
+
+@keyframes bounce {
+    50% {
+        transform: translateY(-15px);
+    }
+}
+
+/* MÀN HÌNH 2: HAPPY BIRTHDAY */
+
+#screen2 {
+    min-height: 100vh;
+    overflow-x: hidden;
+    padding: 15px 10px;
+}
+
+.stage {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 20px;
+    width: 100%;
+    max-width: 900px;
+}
+
+/* CỘT TRÁI */
+
+.left {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* KHUNG CHỮ */
+
+.title {
+    position: relative;
+    line-height: 1;
+    isolation: isolate;
+}
+
+.title h1 {
+    position: relative;
+    z-index: 2;
+    font-family: "Arial Black", Impact, Arial, sans-serif;
+    font-weight: 900;
+    letter-spacing: 2px;
+    min-height: 1.1em;
+    -webkit-text-stroke: 7px #2b2b2b;
+    paint-order: stroke fill;
+    text-shadow: 3px 4px 0 rgba(0, 0, 0, 0.25);
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.title h1 span {
+    display: inline-block;
+    opacity: 0;
+    transform: translateY(35px);
+    animation: letterRise 0.35s ease forwards;
+}
+
+@keyframes letterRise {
+    from {
+        opacity: 0;
+        transform: translateY(35px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.t-happy {
+    font-size: clamp(34px, 7vw, 64px);
+    color: white;
+}
+
+.t-bday {
+    font-size: clamp(38px, 8vw, 76px);
+    color: #ffd400;
+    margin-top: 4px;
+}
+
+/* MŨ SINH NHẬT */
+
+.hat {
+    position: absolute;
+    top: -85px;
+    left: calc(50% + 130px);
+    width: 65px;
+    height: 65px;
+    opacity: 0;
+    z-index: 1;
+    pointer-events: none;
+    transform: translate(-50%, -180px) rotate(-30deg);
+}
+
+.hat img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+}
+
+.hat.show {
+    opacity: 1;
+    animation: hatDropFlip 1.6s cubic-bezier(0.25, 1, 0.35, 1) forwards;
+}
+
+@keyframes hatDropFlip {
+    0% {
+        opacity: 0;
+        transform: translate(-30px, -180px) rotate(-30deg);
+    }
+
+    65% {
+        opacity: 1;
+        transform: translate(-30px, 50px) rotate(350deg);
+    }
+
+    82% {
+        transform: translate(-30px, 50px) rotate(370deg);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translate(-30px, 50px) rotate(360deg);
+    }
+}
+
+.hat.tilt {
+    animation: hatTilt 1s ease-in-out forwards;
+}
+
+@keyframes hatTilt {
+    0% {
+        transform: translate(-30px, 50px) rotate(360deg);
+    }
+
+    100% {
+        transform: translate(-30px, 50px) rotate(380deg);
+    }
+}
+
+/* KHUNG NGÀY SINH */
+
+.birthdate-box,
+.name-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    padding: 8px 20px;
+    background: #ffdf42;
+    border: 2px solid #d9a900;
+    border-radius: 25px;
+    color: #070707;
+    font-size: 15px;
+    font-weight: bold;
+    white-space: nowrap;
+    box-shadow: 0 4px 8px #d6a52e;
+}
+
+.birthdate-box {
+    margin-top: 14px;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity 0.6s, transform 0.6s;
+    position: relative;
+    overflow: hidden;
+    isolation: isolate;
+}
+
+.date-curtain {
+    position: absolute;
+    inset: 0;
+    z-index: 5;
+    background: linear-gradient(
+        180deg,
+        #ffca05 0%,
+        #ffe45c 65%,
+        #ffca05 100%
+    );
+    border-radius: inherit;
+    transform: translateY(0);
+    pointer-events: none;
+}
+
+.birthdate-box.open .date-curtain {
+    animation: dateCurtainDown 1.2s ease-in-out forwards;
+}
+
+@keyframes dateCurtainDown {
+    from {
+        transform: translateY(0);
+    }
+
+    to {
+        transform: translateY(105%);
+    }
+}
+
+#dateNumber {
+    display: inline-block;
+    min-width: 92px;
+    text-align: center;
+    font-variant-numeric: tabular-nums;
+}
+
+.date-stars {
+    flex: 0 0 auto;
+}
+
+.birthdate-box.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* NÚT TIẾP TỤC */
+
+#btnNext {
+    opacity: 0;
+    pointer-events: none;
+    position: relative;
+    top: 15px;
+    transition: opacity 0.6s, transform 0.3s, background 0.3s;
+}
+
+#btnNext.show {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+/* CỘT PHẢI */
+
+.right {
+    display: flex;
+    justify-content: center;
+}
+
+.photo-wrap {
+    position: relative;
+    width: 280px;
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transform: translateY(110vh);
+}
+
+.photo-wrap.rise {
+    animation: rise 20s cubic-bezier(0.25, 1, 0.25, 1) forwards;
+}
+
+@keyframes rise {
+    from {
+        transform: translateY(110vh);
+    }
+
+    to {
+        transform: translateY(0);
+    }
+}
+
+/* KHUNG ẢNH TRÒN */
+
+.image {
+    width: 220px;
+    height: 220px;
+    border: 6px solid white;
+    border-radius: 50%;
+    overflow: hidden;
+    box-shadow: 0 8px 25px #c77b9c;
+    position: relative;
+    z-index: 2;
+}
+
+.image img.slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    opacity: 0;
+    transition: opacity 1.2s ease;
+}
+
+.image img.slide.active {
+    opacity: 1;
+}
+
+/* KHUNG TÊN */
+
+.name-box {
+    margin-top: -20px;
+    position: relative;
+    z-index: 4;
+}
+
+.name-box i {
+    color: #f04b82;
+    animation: heartBeat 1s infinite;
+}
+
+@keyframes heartBeat {
+    50% {
+        transform: scale(1.4);
+    }
+}
+
+/* BÓNG BAY */
+
+.balloon {
+    position: absolute;
+    width: 110px;
+    z-index: 3;
+    pointer-events: none;
+    bottom: 55px;
+}
+
+.balloon img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.balloon-left img {
+    transform-origin: 50% 90%;
+    animation: balloonSwingLeft 3s ease-in-out infinite;
+}
+
+.balloon-right img {
+    transform-origin: 50% 90%;
+    animation: balloonSwingRight 3.5s ease-in-out infinite;
+}
+
+@keyframes balloonSwingLeft {
+    0%, 100% {
+        transform: rotate(-10deg);
+    }
+
+    50% {
+        transform: rotate(10deg);
+    }
+}
+
+@keyframes balloonSwingRight {
+    0%, 100% {
+        transform: scaleX(-1) rotate(-10deg);
+    }
+
+    50% {
+        transform: scaleX(-1) rotate(10deg);
+    }
+}
+
+.balloon-left {
+    left: -15px;
+    top: -50px;
+    width: 140px;
+}
+
+.balloon-right {
+    right: -35px;
+    top: -45px;
+    width: 140px;
+    rotate: calc(20deg);
+    z-index: 0;
+}
+
+/* CÁNH HOA RƠI */
+
+.petal {
+    position: fixed;
+    top: -40px;
+    pointer-events: none;
+    z-index: 20;
+    animation: petalFall linear forwards;
+}
+
+@keyframes petalFall {
+    0% {
+        transform: translateY(0) rotate(0deg);
+    }
+
+    100% {
+        transform: translateY(110vh) rotate(1080deg);
+    }
+}
+
+/* MÀN HÌNH 3: PHONG BÌ */
+
+.envelope {
+    font-size: 100px;
+    cursor: pointer;
+    animation: bounce 1.5s infinite;
+}
+
+/* MÀN HÌNH 4: BỨC THƯ */
+
+.letter {
+    position: relative;
+    background: linear-gradient(145deg, #fffdf7, #fff4e8);
+    max-width: 650px;
+    width: 95%;
+    padding: 30px;
+    border-radius: 22px;
+    text-align: left;
+    line-height: 1.9;
+    margin-top: 20px;
+    font-family: Arial, sans-serif;
+    border: 3px solid #ffb6c1;
+    outline: 4px solid #fff0f5;
+    outline-offset: -9px;
+    box-shadow: 
+        0 15px 35px rgba(232, 67, 131, 0.2), 
+        inset 0 0 25px rgba(255, 192, 203, 0.25);
+    opacity: 0;
+    transform: perspective(1000px) rotateX(-75deg) scaleY(0.2);
+    transform-origin: top center;
+}
+
+.letter.open {
+    animation: letterOpen 1.2s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+}
+
+@keyframes letterOpen {
+    0% {
+        opacity: 0;
+        transform: perspective(1000px) rotateX(-75deg) scaleY(0.2);
+    }
+
+    60% {
+        opacity: 1;
+        transform: perspective(1000px) rotateX(8deg) scaleY(1.03);
+    }
+
+    100% {
+        opacity: 1;
+        transform: perspective(1000px) rotateX(0) scaleY(1);
+    }
+}
+
+.letter h2 {
+    text-align: center;
+    color: #e84383;
+    font-size: 24px;
+    margin-bottom: 20px;
+    text-shadow: 1px 2px 5px #ffd6e5;
+    min-height: 30px;
+}
+
+#typedText {
+    font-size: 16px;
+    line-height: 1.8;
+    color: #75425b;
+    white-space: pre-wrap;
+    overflow-wrap: break-word;
+    word-break: normal;
+    font-family: Arial, sans-serif;
+}
+
+.signature {
+    text-align: right;
+    margin-top: 20px;
+    color: #e84383;
+    font-style: italic;
+    font-size: 17px;
+}
+
+.heart {
+    position: fixed;
+    bottom: -30px;
+    font-size: 22px;
+    animation: fly linear forwards;
+    pointer-events: none;
+    z-index: 10;
+}
+
+@keyframes fly {
+    to {
+        transform: translateY(-110vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+/* GIF SINH NHẬT MẶC ĐỊNH CHO MÁY TÍNH */
+.gif-box {
+    width: 100px;
+    height: 100px;
+    margin-left: 280px;
+    margin-bottom: 70px;
+    opacity: 0;
+    transform: translate(50px, 50px) scale(0.9);
+    pointer-events: none;
+}
+
+.gif-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.gif-box.show {
+    animation: gifAppear 1s ease forwards;
+}
+
+@keyframes gifAppear {
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+/* TỐI ƯU HÓA HOÀN TOÀN CHO ĐIỆN THOẠI (MOBILE RESPONSIVE) */
+
+@media (max-width: 768px) {
+    body {
+        overflow-x: hidden;
+    }
+
+    .screen {
+        padding: 10px;
+        justify-content: flex-start;
+        padding-top: 35px;
+    }
+
+    .stage {
+        grid-template-columns: 1fr;
+        gap: 15px;
+        justify-items: center;
+        width: 100%;
+    }
+
+    .left {
+        width: 100%;
+        min-height: auto;
+        order: 1;
+    }
+
+    .right {
+        width: 100%;
+        order: 2;
+        margin-top: 10px;
+    }
+
+    .photo-wrap {
+        width: 240px;
+    }
+
+    .image {
+        width: 180px;
+        height: 180px;
+        border-width: 5px;
+    }
+
+    .balloon {
+        width: 90px;
+    }
+
+    .balloon-left {
+        left: -15px;
+        top: -30px;
+    }
+
+    .balloon-right {
+        right: -15px;
+        top: -30px;
+    }
+
+    .birthdate-box,
+    .name-box {
+        font-size: 13px;
+        padding: 7px 16px;
+    }
+
+    .hat {
+        top: -65px;
+        left: calc(50% + 55px);
+        width: 50px;
+        height: 50px;
+    }
+
+    /* Đưa GIF sinh nhật vào vị trí cân đối trên điện thoại, không bị lệch thô */
+    .gif-box {
+        position: static;
+        margin: 15px auto 0 auto;
+        width: 75px;
+        height: 75px;
+        transform: none;
+    }
+
+    @keyframes gifAppear {
+        to {
+            opacity: 1;
+            transform: scale(1);
+        }
+    }
+
+    .letter {
+        padding: 20px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<audio id="bgMusic" src="./6e3ce402-f167-48aa-a4df-127b6c31609f.mp3" loop preload="auto"></audio>
+
+<!-- S1 -->
+
+<section class="screen active" id="screen1">
+    <div class="gift" onclick="openGift()">🎁</div>
+    <p>Nhấn để mở hộp quà</p>
+    <button onclick="openGift()">Mở quà 🎁</button>
+</section>
+
+<!-- S2 -->
+
+<section class="screen" id="screen2">
+    <div class="stage">
+
+        <div class="left">
+
+            <div class="title">
+                <div class="hat" id="hat">
+                    <img src="./mũ.png" alt="Mũ sinh nhật">
+                </div>
+
+                <h1 class="t-happy" id="lineHappy"></h1>
+                <h1 class="t-bday" id="lineBday"></h1>
+            </div>
+
+            <div class="birthdate-box" id="dateBox">
+                <i class="fa-solid fa-calendar-days"></i>
+                <span class="date-stars">⭐</span>
+                <span id="dateNumber">00/00/0000</span>
+                <span class="date-stars">⭐</span>
+                <div class="date-curtain"></div>
+            </div>
+
+            <button id="btnNext" onclick="goToLetter()">
+                Tiếp tục 💌
+            </button>
+
+            <div class="gif-box" id="birthdayGif">
+                <img src="./birthday.gif" alt="Birthday GIF">
+            </div>
+
+        </div>
+
+        <div class="right">
+
+            <div class="photo-wrap" id="photoWrap">
+
+                <div class="balloon balloon-left">
+                    <img src="./ballon-removebg-preview.png" alt="Bóng bay">
+                </div>
+
+                <div class="image" id="slideshow">
+                    <img class="slide active" src="./f4b3c249-6d34-4aec-af64-aeec18e93ab8.png" alt="1">
+                    <img class="slide" src="./1793702591661_1510545720350621056_1510545720350621056_0822f66f0d5df034e8340277bc52b71a.jpg" alt="2">
+                    <img class="slide" src="./1793702591656_1510545720350621056_1510545720350621056_7420e4a8b64db190e5d06ce0cda69689.jpg" alt="3">
+                    <img class="slide" src="./1793702591644_1510545720350621056_1510545720350621056_febfe0085ca7ccfb55547b1497b4eba5.jpg" alt="4">
+                    <img class="slide" src="./1793722710257_5491383583810463299_5491383583810463299_d604b2b53f7b9d8d62b3ba5e26da6a20.jpg" alt="5">
+                </div>
+
+                <div class="name-box">
+                    <i class="fa-solid fa-heart"></i>
+                    <span>Nguyễn Thanh Thảo</span>
+                    <i class="fa-solid fa-heart"></i>
+                </div>
+
+                <div class="balloon balloon-right">
+                    <img src="./ballon-removebg-preview.png" alt="Bóng bay">
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- S3 -->
+
+<section class="screen" id="screen3">
+    <div class="envelope" onclick="openLetter()">💌</div>
+    <button onclick="openLetter()">Mở thư 💌</button>
+</section>
+
+<!-- S4 -->
+
+<section class="screen" id="screen4">
+    <h1 id="liveClock">| 00:00:00 |</h1>
+
+    <div class="letter" id="letterBox">
+        <h2 id="letterTitle"></h2>
+        <div id="typedText"></div>
+        <div class="signature" id="signature"></div>
+    </div>
+</section>
+
+<script>
+const SLIDE_INTERVAL = 3000;
+
+function changeScreen(oldScreen, newScreen) {
+    const oldElement = document.getElementById(oldScreen);
+    const newElement = document.getElementById(newScreen);
+
+    newElement.style.display = "flex";
+    newElement.style.visibility = "visible";
+    newElement.style.opacity = "0";
+    newElement.classList.add("active");
+
+    requestAnimationFrame(() => {
+        requestAnimationFrame(() => {
+            newElement.style.opacity = "1";
+        });
+    });
+
+    oldElement.style.opacity = "0";
+
+    setTimeout(() => {
+        oldElement.classList.remove("active");
+        oldElement.style.display = "none";
+        oldElement.style.visibility = "hidden";
+        oldElement.style.opacity = "";
+        newElement.style.opacity = "";
+    }, 1000);
+}
+
+let timers = [];
+
+function typeText(element, text, speed, done) {
+    const characters = Array.from(text);
+    let i = 0;
+
+    element.innerHTML = "";
+
+    function step() {
+        if (i < characters.length) {
+            const span = document.createElement("span");
+
+            span.textContent = characters[i];
+            element.appendChild(span);
+
+            i++;
+
+            timers.push(setTimeout(step, speed));
+        } else if (done) {
+            done();
+        }
+    }
+
+    step();
+}
+
+let slideTimer = null;
+
+function stopSlideshow() {
+    if (slideTimer) {
+        clearInterval(slideTimer);
+        slideTimer = null;
+    }
+
+    const slides = document.querySelectorAll("#slideshow .slide");
+
+    slides.forEach((slide, index) => {
+        slide.classList.toggle("active", index === 0);
+    });
+}
+
+function startSlideshow() {
+    const slides = document.querySelectorAll("#slideshow .slide");
+
+    if (slides.length < 2) return;
+
+    let current = 0;
+
+    slideTimer = setInterval(() => {
+        slides[current].classList.remove("active");
+        current = (current + 1) % slides.length;
+        slides[current].classList.add("active");
+    }, SLIDE_INTERVAL);
+}
+
+function animateBirthdayDate() {
+    const dateBox = document.getElementById("dateBox");
+    const dateNumber = document.getElementById("dateNumber");
+
+    dateBox.classList.remove("open");
+    dateNumber.textContent = "00/00/0000";
+    void dateBox.offsetWidth;
+
+    dateBox.classList.add("open");
+
+    const target = "05112007";
+    const current = ["0", "0", "0", "0", "0", "0", "0", "0"];
+    let digitIndex = 0;
+
+    function renderDate() {
+        dateNumber.textContent =
+            current[0] + current[1] + "/" +
+            current[2] + current[3] + "/" +
+            current[4] + current[5] + current[6] + current[7];
+    }
+
+    function rollNextDigit() {
+        if (digitIndex >= target.length) {
+            dateNumber.textContent = "05/11/2007";
+            return;
+        }
+
+        const finalDigit = Number(target[digitIndex]);
+        let value = 0;
+
+        function roll() {
+            current[digitIndex] = String(value);
+            renderDate();
+
+            if (value < finalDigit) {
+                value++;
+                setTimeout(roll, 65);
+            } else {
+                digitIndex++;
+                setTimeout(rollNextDigit, 100);
+            }
+        }
+
+        roll();
+    }
+
+    setTimeout(rollNextDigit, 650);
+}
+
+function playBirthdaySequence() {
+    timers.forEach(clearTimeout);
+    timers = [];
+
+    stopSlideshow();
+
+    const happyText = document.getElementById("lineHappy");
+    const birthdayText = document.getElementById("lineBday");
+
+    happyText.textContent = "";
+    birthdayText.textContent = "";
+
+    const hat = document.getElementById("hat");
+
+    hat.classList.remove("show", "tilt");
+    void hat.offsetWidth;
+
+    const dateBox = document.getElementById("dateBox");
+    const btnNext = document.getElementById("btnNext");
+
+    dateBox.classList.remove("show", "open");
+    btnNext.classList.remove("show");
+
+    const photo = document.getElementById("photoWrap");
+
+    photo.classList.add("rise");
+
+    const birthdayGif = document.getElementById("birthdayGif");
+
+    birthdayGif.classList.remove("show");
+
+    timers.push(setTimeout(() => {
+        birthdayGif.classList.add("show");
+    }, 7000));
+
+    typeText(happyText, "HAPPY", 150, () => {
+        timers.push(setTimeout(() => {
+            typeText(birthdayText, "BIRTHDAY", 150, () => {
+                hat.classList.add("show");
+
+                timers.push(setTimeout(() => {
+                    hat.classList.add("tilt");
+                }, 1700));
+
+                dateBox.classList.add("show");
+                animateBirthdayDate();
+
+                photo.classList.add("rise");
+
+                startSlideshow();
+
+                createHearts();
+
+                timers.push(setTimeout(() => {
+                    btnNext.classList.add("show");
+                }, 5000));
+            });
+        }, 500));
+    });
+}
+
+function createPetals() {
+    for (let i = 0; i < 40; i++) {
+        const petal = document.createElement("div");
+
+        petal.className = "petal";
+        petal.textContent = "🌸";
+
+        petal.style.left = Math.random() * 100 + "vw";
+        petal.style.fontSize = (15 + Math.random() * 15) + "px";
+        petal.style.animationDuration = (8 + Math.random() * 6) + "s";
+        petal.style.animationDelay = Math.random() * 5 + "s";
+
+        document.body.appendChild(petal);
+
+        setTimeout(() => petal.remove(), 15000);
+    }
+}
+
+function openGift() {
+    const music = document.getElementById("bgMusic");
+
+    if (music) {
+        music.play().catch(error => {
+            console.log("Autoplay failed:", error);
+        });
+    }
+
+    changeScreen("screen1", "screen2");
+
+    createPetals();
+
+    setTimeout(() => {
+        playBirthdaySequence();
+    }, 1000);
+}
+
+function goToLetter() {
+    changeScreen("screen2", "screen3");
+}
+
+let clockInterval = null;
+
+function startLiveClock() {
+    const clockEl = document.getElementById("liveClock");
+    
+    function updateTime() {
+        const now = new Date();
+        const hours = String(now.getHours()).padStart(2, '0');
+        const minutes = String(now.getMinutes()).padStart(2, '0');
+        const seconds = String(now.getSeconds()).padStart(2, '0');
+        clockEl.textContent = `| ${hours}:${minutes}:${seconds} |`;
+    }
+    
+    updateTime();
+    if (clockInterval) clearInterval(clockInterval);
+    clockInterval = setInterval(updateTime, 1000);
+}
+
+function openLetter() {
+    changeScreen("screen3", "screen4");
+    startLiveClock();
+
+    const letterBox = document.getElementById("letterBox");
+    const title = document.getElementById("letterTitle");
+    const textElement = document.getElementById("typedText");
+    const signature = document.getElementById("signature");
+
+    title.textContent = "";
+    textElement.textContent = "";
+    signature.textContent = "";
+
+    letterBox.classList.remove("open");
+    void letterBox.offsetWidth;
+    letterBox.classList.add("open");
+
+    const titleText = "Happy Birthday Thanh Thảo";
+
+    const message = `Nhân dịp sinh nhật Phát có đôi lời muốn gửi tới Thảo. Bước sang tuổi mới Phát hy vọng Thảo lúc nào cũng lạc quan, vui vẻ, luôn kiên cường trong mọi chuyện, nhớ chú ý sức khoẻ và học cách yêu thương bản thân nhiều hơn.
+
+Chúc Thảo luôn bình yên. Tuổi mới rực rỡ hơn nhé - Mong rằng Thảo sẽ gặp được nhiều may mắn và những điều tốt đẹp trong cuộc sống.
+
+Sinh nhật vui vẻ nha 🍀`;
+
+    const characters = Array.from(message);
+
+    function typeTitle(i = 0) {
+        if (i < titleText.length) {
+            title.textContent += titleText[i];
+            setTimeout(() => {
+                typeTitle(i + 1);
+            }, 100);
+        } else {
+            setTimeout(() => {
+                typeMessage(0);
+            }, 400);
+        }
+    }
+
+    function typeMessage(i) {
+        if (i < characters.length) {
+            textElement.textContent += characters[i];
+            setTimeout(() => {
+                typeMessage(i + 1);
+            }, 45);
+        } else {
+            signature.textContent = "With friends";
+        }
+    }
+
+    setTimeout(() => {
+        typeTitle();
+    }, 1100);
+
+    createHearts();
+}
+
+function createHearts() {
+    for (let i = 0; i < 20; i++) {
+        const heart = document.createElement("div");
+
+        heart.className = "heart";
+        heart.innerHTML = "💗";
+
+        heart.style.left = Math.random() * 100 + "vw";
+        heart.style.animationDuration = (6 + Math.random() * 4) + "s";
+        heart.style.animationDelay = Math.random() * 4 + "s";
+
+        document.body.appendChild(heart);
+
+        setTimeout(() => heart.remove(), 11000);
+    }
+}
+</script>
+
+</body>
+</html>
